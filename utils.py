@@ -14,6 +14,9 @@ nltk.download('punkt')
 # Fungsi untuk memuat model dari file pickle
 def load_model(filename):
     # Menggunakan os.path.join untuk memastikan kompatibilitas jalur
+    model = load_model('model/logistic_regression.pkl')
+    vectorizer = load_model('model/vectorizer.pkl')
+
     model_path = os.path.join(os.path.dirname(__file__), '..', filename)
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
